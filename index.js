@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 app.use(express.static('public'));
 
-let beranda = await home()
 app.get('/', async function(req, res){
+    let beranda = await home()
     res.render('form', {
     pesan: beranda
   });
@@ -89,4 +89,8 @@ let beranda = await home()
 });
 }
 
-app.listen(3000);
+const appPort = 3056;
+
+app.listen(process.env.PORT || appPort, () => {
+	console.info('We are up!');
+	});
