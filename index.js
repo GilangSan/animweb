@@ -25,8 +25,8 @@ app.get('/', async function(req, res){
     res.render('form', {
     pesan: beranda
   });
+  console.log(beranda)
 });
-console.log(beranda)
 
 app.post('/search', async function (req,res){
   console.log(req.body)
