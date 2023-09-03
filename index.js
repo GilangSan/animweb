@@ -82,16 +82,15 @@ app.post('/anime', async function (req, res) {
    })
 });
 
-function updet(){
+async function updet(){
 app.get('/', function(req, res){
+let beranda = await home()
   res.render('form', {
-    pesan: pesan,
-    title: "EJS example",
-    header: "Some users"
+    pesan: beranda,
   });
 });
 }
 
-start()
+updet()
 
 app.listen(3000);
