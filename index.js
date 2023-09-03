@@ -80,15 +80,6 @@ app.post('/anime', async function (req, res) {
    })
 });
 
-async function updet(){
-app.get('/', function(req, res){
-let beranda = await home()
-  res.render('form', {
-    pesan: beranda,
-  });
-});
-}
-
 const appPort = 3056;
 
 app.listen(process.env.PORT || appPort, () => {
