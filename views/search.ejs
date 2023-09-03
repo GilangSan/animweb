@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Animeks - By Lang</title>
+
+  <!-- HTML -->
+
+
+  <!-- Custom Styles -->
+</head>
+
+<body>
+  <!-- Project -->
+  <nav id="navbar">
+  <h3>Animeks - Nonton Anime</h3>
+  <ul>
+  </ul>
+</nav>
+  <center>
+    <br></p></div></center>
+  <div class="box">
+      <form action="/search" method="POST">
+        <input name="search" placeholder="One Piece" type="text"> 
+        <button class="sub" type="submit">Search</button>
+      </form>
+    <div class="home">
+      <center>
+        <div class="card">
+          <h4>Hasil Dari : <%= query %></h4>
+          <% search.forEach(function(pesann){ %>
+          <form action="/animes" method="POST">
+          <img src=<%= pesann.thumb %> alt="gambar" width="200">
+          <center><h5><button class="link" type="submit" name="anime" value=<%= pesann.url.replace("https://oploverz.red/anime/", "") %>><%= pesann.title %><br><%= pesann.rating %></button></h5>
+          </center></form>
+          <% }) %>
+        </div>
+        <div class="footer">
+  <center>
+  <strong>© Lang</strong><br>
+    <a href="https://saweria.co/langbotz">Donasi</a><br>
+  <a href="https://wa.me/62895634865955">Whatsapp</a>
+      </center>
+    </div>
+  </div>
+  </center>
+  </div>
+  <style>
+    body{
+      font-size: 13pt;
+      background-color: #404040;
+      font-family: Arial, Tahoma, Serif;
+      padding: 0;
+      margin: 0;
+      color: white;
+    }
+    
+    nav {
+  display: flex; /* 1 */
+  justify-content: space-between; /* 2 */
+  padding: 0rem 1rem; /* 3 */
+  background: #292929; /* 4 */
+}
+
+h3{
+  color: grey;
+}
+
+nav ul {
+  display: flex; /* 5 */
+  list-style: none; /* 6 */
+}
+
+nav li {
+  padding-left: 1rem; /* 7! */
+}
+    
+    h4{
+      position: relative;
+      bottom: 20px;
+    }
+    
+    .card{
+      width: 200px;
+      padding: 15px;
+      border: solid;
+      box-shadow: 8px 10px black;
+    }
+    
+    h5{
+      position: relative;
+      margin: auto;
+      width: 50%;
+      bottom: 25px;
+      background-color: grey;
+      width: 200px;
+      height: 60px;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .link{
+      background: none;
+      border: solid;
+      width: 200px;
+      height: 60px;
+    }
+    
+    .sub{
+      position: relative;
+      border: none;
+      border-radius: 50px;
+      width: 60px;
+      height: 40px;
+    }
+    
+    input{
+      position: relative;
+      border: none;
+      margin: 10px;
+      width: 260px;
+      height: 30px;
+      border-radius: 3px;
+    }
+    
+    p {
+      margin: 10px;
+    }
+    
+    .home{
+      position: relative;
+      top: 40px;
+      height: 500px;
+    }
+    
+    .footer{
+      position: relative;
+      top: 300px;
+      color: black;
+    }
+    
+    .footer a {
+      color: lime;
+    }
+  </style>
+</body>
+</html>
