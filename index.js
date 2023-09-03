@@ -20,15 +20,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload.array());
 app.use(express.static('public'));
 
-async function start(){
-  let beranda = await home()
-    app.get('/', function(req, res){
-      res.render('form', {
-      pesan: beranda
-    });
+let beranda = await home()
+app.get('/', async function(req, res){
+    res.render('form', {
+    pesan: beranda
   });
-  console.log(beranda)
-}
+});
+console.log(beranda)
 
 app.post('/search', async function (req,res){
   console.log(req.body)
@@ -90,7 +88,5 @@ let beranda = await home()
   });
 });
 }
-
-updet()
 
 app.listen(3000);
