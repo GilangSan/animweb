@@ -7,7 +7,7 @@ const { infos, home, search, info, eps, down } = require("./scrape")
 
 app.engine('.html', require('ejs').__express)
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', __dirname +'/views');
 
 // for parsing application/json
 app.use(bodyParser.json());
